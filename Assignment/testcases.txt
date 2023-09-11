@@ -1,0 +1,110 @@
+----------------------------------------------------------
+--------------------- REQUIREMENT 1 ----------------------
+----------------------------------------------------------
+
+    string tempMap[50][50] = {
+        {"", "", "W", "", "S"},
+        {"", "W", "", "", "S"},
+        {"W", "S", "", "", "S"},
+        {"W", "S", "", "", "S"},
+        {"W", "S", "", "", ""}
+    };
+
+    int r = 5;
+    int c = 5;
+    string** Map = new string*[r];
+    
+    for (int i = 0; i < r; i++) {
+        Map[i] = new string[c];
+        for (int j = 0; j < c; j++) {
+            Map[i][j] = tempMap[i][j];
+        }
+    }
+
+    gameMap gMap(Map, r, c);
+    gMap.printMap();
+
+    ---------
+    string tempMap[50][50] = {
+        {"W", "W", "WA1B1C1D1E1F", "A", "S"},
+        {"W", "W", "W", "W", "S"},
+        {"W", "S", "D", "D", "S"},
+        {"W", "S", "D", "D", "S"},
+        {"W", "SA1B1C1D1", "A", "A", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "ASA1B1C1D1"},
+        {"SA1B1C1D1", "SA2B2C2D2", "SA3B4C5D6", "ASK4B1C1D1R", "ASK4B1C1D1R"},
+        {"SA1B1C1D1", "SA2B2C2D2", "SA3B4C5D6", "ASK4B1C1D1R", "ASK4B1C1D1R"}
+    };
+
+    int r = 10;
+    int c = 5;
+    string** Map = new string*[r];
+    
+    for (int i = 0; i < r; i++) {
+        Map[i] = new string[c];
+        for (int j = 0; j < c; j++) {
+            Map[i][j] = tempMap[i][j];
+        }
+    }
+
+    gameMap gMap(Map, r, c);
+    gMap.printMap();
+
+    ----------
+    string tempMap[50][50] = {
+        {"W", "W", "WA1B1C1D1E1F", "A", "S", "A", "S", "A", "S", "A"},
+        {"W", "W", "W", "W", "S", "A", "S", "A", "S", "A"},
+        {"W", "S", "D", "D", "S", "A", "S", "A", "S", "A"},
+        {"W", "S", "D", "D", "S", "A", "S", "A", "S", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "A", "A", "S", "A", "S", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "A", "A", "S", "A", "S", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "A", "A", "S", "A", "S", "A"},
+        {"W", "SA1B1C1D1", "A", "A", "ASA1B1C1D1", "A", "S", "A", "S", "A"},
+        {"SA1B1C1D1", "SA2B2C2D2", "SA3B4C5D6", "ASK4B1C1D1R", "ASK4B1C1D1R", "A", "S", "A", "S", "A"},
+        {"SA1B1C1D1", "SA2B2C2D2", "SA3B4C5D6", "ASK4B1C1D1R", "ASK4B1C1D1R", "A", "S", "A", "S", "A"}
+    };
+
+    int r = 10;
+    int c = 10;
+    string** Map = new string*[r];
+    
+    for (int i = 0; i < r; i++) {
+        Map[i] = new string[c];
+        for (int j = 0; j < c; j++) {
+            Map[i][j] = tempMap[i][j];
+        }
+    }
+
+    gameMap gMap(Map, r, c);
+    gMap.printMap();
+
+----------------------------------------------------------
+--------------------- REQUIREMENT 2 ----------------------
+----------------------------------------------------------
+
+rat r1("R1",point(1,4));
+r1.printInfo();
+cat c2("C2",point(2,5));
+c2.printInfo();
+
+----------
+dog d1("D3",point(1,4));
+zodiac *pr1=&d1;
+pr1->printInfo();
+
+----------------------------------------------------------
+--------------------- REQUIREMENT 3 ----------------------
+----------------------------------------------------------
+
+zoList A;
+zodiac* cur=new rat("R1",point(0,0));
+A.add(cur);
+A[0]->printInfo();
+
+----------
+zoList A;
+zodiac* cur=new cat("c1",point(1,4));
+A.add(cur);
+A[0]->printInfo();
