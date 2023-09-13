@@ -7,27 +7,18 @@ using namespace std;
 
 int main()
 {
+	int guess;
+	int score = 0;
+
 	srand(time(NULL));
 	int number = rand() % 20;
 	// Random numbers will run from 0 to 19
 	// rand() % 20 + 1: from 1 to 20
 	cout << "Random nummber is: " << number << endl;
-	return 0;
-}
 
-// Example of Srand-Rand + Do-While
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
+	cout << endl;
 
-using namespace std;
-
-int main()
-{
-	int number;
-	int guess;
-	int score = 0;
-	srand(time(NULL));
+	// Example of Srand-Rand + Do-While
 	number = rand() % 10 + 1;
 	do
 	{
@@ -42,5 +33,7 @@ int main()
 		score++;
 	} while (number != guess);
 	cout << "The number of times you tried is: " << score << endl;
+
 	return 0;
 }
+
