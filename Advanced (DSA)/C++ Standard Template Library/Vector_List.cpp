@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <list>
 // We all know that Array has a lot of limitations, Vector is one of the solutions to solve that problem
 
 using namespace std;
 
+// Example 1:
 vector<int> InitializeaVector(int n)
 {
 	vector<int> listofNumbers;
@@ -16,11 +18,23 @@ vector<int> InitializeaVector(int n)
 	return listofNumbers;
 }
 
+// Example 2:
+int SumInVector(vector<int> listofNumbers)
+{
+	int sum = 0;
+	for (int i = 1; i <= listofNumbers.size(); i++)
+	{
+		sum += i;
+	}
+
+	return sum;
+}
+
 int main()
 {
 	// Create a vector for integers and string
 	vector<int> listforIntegers;
-	vector<string> listforString;
+	list<string> listforString; // List will be used for string
 	vector<int> listforIntegers_2{6, 7, 8, 9, 10};
 
 	// Add elements into vectors
@@ -40,34 +54,68 @@ int main()
 	cout << endl;
 
 	// Print all elements in each vector
+	// At here, with vector declared, we don't even need the number of elements in vector unlike array
 	for (int i = 0; i < listforIntegers.size(); i++)
 	{
 		cout << listforIntegers[i] << " ";
 	}
+
+	cout << endl;
+
+	// For shorter, we will write
+	for (int i : listforIntegers)
+	{
+		cout << i << " ";
+	}
 	
 	cout << endl;
 
-	for (int i = 0; i < listforString.size(); i++)
+	// We can't use int for this case, so we have to declare #include <list>
+	for (string str : listforString)
 	{
-		cout << listforString[i] << " ";
+		cout << str << " ";
 	}
 
 	cout << endl;
 
-	for (int i = 0; i < listforIntegers_2.size(); i++)
+	listforIntegers_2.pop_back(); // This command will remove the last element: 10
+
+	for (int i : listforIntegers_2)
 	{
-		cout << listforIntegers_2[i] << " ";
+		cout << i << " ";
 	}
 
 	cout << endl;
 
-	// Example for vector
+	// Example 1:
 	vector<int> listofNumbers = InitializeaVector(10);
 
 	for (int i : listofNumbers)
 	{
 		cout << i << " ";
 	}
+
+	cout << endl;
+
+	// Example 2:
+	vector<int> myVector{1, 2, 3, 4, 5};
+	int sumofIntergers = SumInVector(myVector);
+
+	cout << sumofIntergers;
+
+	cout << endl;
+
+	// Example 3: Iterator
+	vector<int>::iterator it;
+
+	int sum = 0;
+
+	for (it = listforIntegers.begin(); it != listforIntegers.end(); it++)
+	{
+		sum += *it;
+	}
+
+	cout << sum << endl;
 
 	return 0;
 }
