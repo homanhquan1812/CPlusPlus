@@ -61,12 +61,15 @@ public:
 	string food;
 
 	// Constructor
+	
 	Function(string name, int age, string food)
 	{
 		this->name = name;
 		this->age = age;
 		this->food = food;
 	}
+	// We can write:
+	// Function(string name, int age, string food) : name{name}, age{age}, food{food} {}
 
 	// Destructor thường dùng để giải phóng bộ nhớ, xem thêm để hiểu rõ
 	~Function()
