@@ -20,7 +20,7 @@ public:
 		this->name = name;
 	}
 
-	string getName()
+	string getName() // We can't use void in this case cause it won't return anything
 	{
 		return name;
 	}

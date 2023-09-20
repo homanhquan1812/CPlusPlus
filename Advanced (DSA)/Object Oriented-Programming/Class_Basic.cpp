@@ -85,6 +85,8 @@ public:
 int main()
 {
 	Function person1 = Function("Ho Manh Quan", 23, "KFC");
+	// Or we can write:
+	// Function person1("Ho Manh Quan", 23, "KFC");
 
 	person1.display();
 
