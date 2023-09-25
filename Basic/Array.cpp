@@ -37,7 +37,7 @@ int main()
 
 	cout << endl;
 
-	for (int i = 0; i < size(favoriteNumber); i++)
+	for (int i = 0; i < sizeof(favoriteNumber) / sizeof(favoriteNumber[0]); i++)
 	{
 		cout << favoriteFood[i] << endl;
 	}
